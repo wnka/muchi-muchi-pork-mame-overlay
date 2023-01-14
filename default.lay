@@ -1,0 +1,925 @@
+<!--  Original art by Cave
+               Designed by baf
+          Coding by Olifante          -->
+
+<mamelayout version="2">
+	<element name="digit">
+		<image state="0" file="0.png" />
+		<image state="1" file="1.png" />
+		<image state="2" file="2.png" />
+		<image state="3" file="3.png" />
+		<image state="4" file="4.png" />
+		<image state="5" file="5.png" />
+		<image state="6" file="6.png" />
+		<image state="7" file="7.png" />
+		<image state="8" file="8.png" />
+		<image state="9" file="9.png" />
+		<image state="10" file="A.png" />
+		<image state="11" file="B.png" />
+		<image state="12" file="C.png" />
+		<image state="13" file="D.png" />
+		<image state="14" file="E.png" />
+		<image state="15" file="F.png" />
+		<image state="255" file="minus.png" />
+	</element>
+	<element name="stick">
+		<image state="0"  file="stick_c.png" />
+		<image state="1"  file="stick_n.png" />
+		<image state="2"  file="stick_s.png" />
+		<image state="4"  file="stick_w.png" />
+		<image state="8"  file="stick_e.png" />
+		<image state="5"  file="stick_nw.png" />
+		<image state="6"  file="stick_sw.png" />
+		<image state="10" file="stick_se.png" />
+		<image state="9"  file="stick_ne.png" />
+	</element>
+	<element name="button_a">
+		<image state="0"  file="button_a.png" />
+		<image state="1"  file="button_a_pressed.png" />
+	</element>
+	<element name="button_b">
+		<image state="0"  file="button_b.png" />
+		<image state="1"  file="button_b_pressed.png" />
+	</element>
+	<element name="player_portrait">
+		<image state="0"  file="meidi.png" />
+		<image state="1"  file="kasumi.png" />
+		<image state="2"  file="shasta.png" />
+		<image state="3"  file="lace.png" />
+	</element>
+	<element name="player_name">
+		<image state="0"  file="meidi_name.png" />
+		<image state="1"  file="kasumi_name.png" />
+		<image state="2"  file="shasta_name.png" />
+		<image state="3"  file="lace_name.png" />
+	</element>
+	<element name="drop_viewer">
+		<image state="1" file="drop_bullet.png" />
+		<image state="2" file="drop_rose.png" />
+		<image state="3" file="drop_double.png" />
+		<image state="4" file="drop_rose.png" />
+		<image state="5" file="drop_triple.png" />
+		<image state="6" file="drop_rose.png" />
+		<image state="7" file="drop_option.png" />
+		<image state="8" file="drop_rose.png" />
+		<image state="9" file="drop_bullet.png" />
+	</element>
+	<element name="medal_display">
+		<image state="0"  file="medal_100.png" />
+		<image state="1"  file="medal_200.png" />
+		<image state="2"  file="medal_300.png" />
+		<image state="3"  file="medal_400.png" />
+		<image state="4"  file="medal_500.png" />
+		<image state="5"  file="medal_600.png" />
+		<image state="6"  file="medal_700.png" />
+		<image state="7"  file="medal_800.png" />
+		<image state="8"  file="medal_900.png" />
+		<image state="9"  file="medal_1000.png" />
+		<image state="10" file="medal_2000.png" />
+		<image state="11" file="medal_3000.png" />
+		<image state="12" file="medal_4000.png" />
+		<image state="13" file="medal_5000.png" />
+		<image state="14" file="medal_6000.png" />
+		<image state="15" file="medal_7000.png" />
+		<image state="16" file="medal_8000.png" />
+		<image state="17" file="medal_9000.png" />
+		<image state="18" file="medal_10000.png" />
+	</element>
+	<element name="background_yoko">
+		<image file="background_yoko.png" />
+	</element>
+	<element name="background_tate">
+		<image file="background_tate.png" />
+	</element>
+	<element name="game_logo">
+		<image file="logo.png" />
+	</element>
+	<element name="profile_gadget">
+		<image state="0" file="profile.png" />
+	</element>
+	<element name="powerup_drops_gadget">
+		<image state="0" file="powerup_drops.png" />
+	</element>
+	<element name="option_drops_gadget">
+		<image state="0" file="option_drops.png" />
+	</element>
+	<element name="rank_bar_gadget">
+		<image state="0" file="rank_bar.png" />
+	</element>
+	<element name="next_medal_gadget">
+		<image state="0" file="next_medal.png" />
+	</element>
+	<element name="next_drop_gadget">
+		<image state="0" file="next_drop.png" />
+	</element>
+	<element name="zan_counter_gadget">
+		<image state="0" file="zan_counter.png" />
+	</element>
+	<element name="boss_time_gadget">
+		<image state="0" file="boss_time.png" />
+	</element>
+	<element name="boss_hp_gadget">
+		<image state="0" file="boss_hp.png" />
+	</element>
+    <element name="warning" defstate="1">
+        <text state="1" string="This view requires the layout plugin." />
+    </element>
+    <element name="rank_bar">
+        <rect><bounds x="0.00" y="0.00" width="1.00" height="1.00" /></rect>
+    </element>
+    
+    <group name="rank_panel">
+		<element id="rank_bar_gadget" ref="rank_bar_gadget">
+			<bounds x="1401" y="11" width="510" height="118" />
+		</element>
+		<element id="rank_bar" ref="rank_bar">
+			<bounds x="1461" y="78" width="396" height="25" />
+            <color red="1" green="0" blue="0" alpha="1" />
+		</element>
+		<element id="rank_digit_0" ref="digit">
+			<bounds x="1720" y="3" width="40" height="60" />
+		</element>
+		<element id="rank_digit_1" ref="digit">
+			<bounds x="1748" y="3" width="40" height="60" />
+		</element>
+		<element id="rank_digit_2" ref="digit">
+			<bounds x="1779" y="20.5" width="25" height="38" />
+		</element>
+		<element id="rank_digit_3" ref="digit">
+			<bounds x="1796" y="20.5" width="25" height="38" />
+		</element>
+		<element id="rank_digit_4" ref="digit">
+			<bounds x="1813" y="20.5" width="25" height="38" />
+		</element>
+		<element id="rank_digit_5" ref="digit">
+			<bounds x="1830" y="20.5" width="25" height="38" />
+		</element>
+    </group>
+    
+    <group name="zan_panel">
+		<element id="zan_counter_gadget" ref="zan_counter_gadget">
+			<bounds x="1430" y="140" width="454" height="121" />
+		</element>
+		<element id="zan_digit_sign" ref="digit">
+			<bounds x="1455" y="184" width="48" height="72" />
+		</element>
+		<element id="zan_digit_0" ref="digit">
+			<bounds x="1494" y="184" width="48" height="72" />
+		</element>
+		<element id="zan_digit_1" ref="digit">
+			<bounds x="1533" y="184" width="48" height="72" />
+		</element>
+		<element id="zan_digit_2" ref="digit">
+			<bounds x="1572" y="184" width="48" height="72" />
+		</element>
+		<element id="zan_digit_3" ref="digit">
+			<bounds x="1611" y="184" width="48" height="72" />
+		</element>
+    </group>
+    
+    <group name="boss_hp_panel">
+		<element id="boss_hp_gadget" ref="boss_hp_gadget">
+			<bounds x="1428" y="586" width="456" height="118" />
+		</element>
+		<element id="hp_digit_0" ref="digit">
+			<bounds x="1712" y="614" width="40" height="60" />
+		</element>
+		<element id="hp_digit_1" ref="digit">
+			<bounds x="1746" y="614" width="40" height="60" />
+		</element>
+		<element id="hp_digit_2" ref="digit">
+			<bounds x="1780" y="614" width="40" height="60" />
+		</element>
+		<element id="hp_digit_3" ref="digit">
+			<bounds x="1814" y="614" width="40" height="60" />
+		</element>
+    </group>
+    
+    <group name="boss_time_panel">
+		<element id="boss_time_gadget" ref="boss_time_gadget">
+			<bounds x="1428" y="709" width="457" height="118" />
+		</element>
+		<element id="phase_digit" ref="digit">
+			<bounds x="1725" y="750" width="25" height="38" />
+		</element>
+		<element id="timer_digit_0" ref="digit">
+			<bounds x="1769" y="750" width="25" height="38" />
+		</element>
+		<element id="timer_digit_1" ref="digit">
+			<bounds x="1790" y="750" width="25" height="38" />
+		</element>
+		<element id="timer_digit_2" ref="digit">
+			<bounds x="1813" y="750" width="25" height="38" />
+		</element>
+    </group>
+    
+    <group name="next_drop_panel">
+		<element id="next_drop_gadget" ref="next_drop_gadget">
+			<bounds x="1429" y="275" width="477" height="184" />
+		</element>
+		<element id="drop_viewer_0" ref="drop_viewer">
+			<bounds x="1514" y="364" width="50" height="50" />
+		</element>
+		<element id="drop_viewer_1" ref="drop_viewer">
+			<bounds x="1574" y="364" width="50" height="50" />
+		</element>
+		<element id="drop_viewer_2" ref="drop_viewer">
+			<bounds x="1634" y="364" width="50" height="50" />
+		</element>
+		<element id="drop_viewer_3" ref="drop_viewer">
+			<bounds x="1694" y="364" width="50" height="50" />
+		</element>
+		<element id="drop_viewer_4" ref="drop_viewer">
+			<bounds x="1754" y="364" width="50" height="50" />
+		</element>
+		<element id="drop_viewer_5" ref="drop_viewer">
+			<bounds x="1814" y="364" width="50" height="50" />
+		</element>
+    </group>
+    
+    <group name="next_medal_panel">
+		<element id="next_medal_gadget" ref="next_medal_gadget">
+			<bounds x="1428" y="458" width="381" height="117" />
+		</element>
+		<element id="medal_display" ref="medal_display">
+			<bounds x="1703" y="475" width="80" height="80" />
+		</element>
+    </group>
+    
+    <group name="option_drops_panel">
+		<element id="option_drops_gadget" ref="option_drops_gadget">
+			<bounds x="1688" y="866" width="197" height="171" />
+		</element>
+		<element id="option_drops_digit" ref="digit">
+			<bounds x="1775" y="932" width="58" height="87" />
+		</element>
+    </group>
+    
+    <group name="powerup_drops_panel">
+		<element id="powerup_drops_gadget" ref="powerup_drops_gadget">
+			<bounds x="1424" y="870" width="219" height="167" />
+		</element>
+		<element id="powerup_drops_digit" ref="digit">
+			<bounds x="1503" y="932" width="58" height="87" />
+		</element>
+    </group>
+    
+    <group name="profile_panel">
+		<element id="profile_gadget" ref="profile_gadget">
+			<bounds x="19" y="0" width="531" height="290" />
+		</element>
+        <element id="player_portrait_1" ref="player_portrait">
+            <bounds x="48" y="73" width="115" height="115" />
+        </element>
+        <element id="player_portrait_2" ref="player_portrait">
+            <bounds x="48" y="73" width="115" height="115" />
+        </element>
+        <element id="player_name_1" ref="player_name">
+            <bounds x="192" y="99" width="296" height="26" />
+        </element>
+        <element id="player_name_2" ref="player_name">
+            <bounds x="192" y="99" width="296" height="26" />
+        </element>
+        <element id="player_variant_1" ref="digit">
+            <bounds x="350" y="137" width="40" height="60" />
+        </element>
+        <element id="player_variant_2" ref="digit">
+            <bounds x="350" y="137" width="40" height="60" />
+        </element>
+        <repeat count="8">
+            <param name="i" start="0" increment="1" />
+            <param name="x" start="220" increment="30" />
+            <element id="p1_score_digit_~i~" ref="digit">
+                <bounds x="~x~" y="200" width="33" height="50" />
+            </element>
+        </repeat>
+    </group>
+    
+    <group name="p1_input_panel">
+        <element id="p1_stick" ref="stick">
+            <bounds x="20" y="800" width="247" height="247" />
+        </element>
+        <element id="p1_button_a" ref="button_a">
+            <bounds x="326" y="858" width="150" height="150" />
+        </element>
+        <element id="p1_button_b" ref="button_b">
+            <bounds x="213" y="898" width="150" height="150" />
+        </element>
+    </group>
+    
+    <group name="p2_input_panel">
+        <element id="p2_stick" ref="stick">
+            <bounds x="1385" y="800" width="247" height="247" />
+        </element>
+        <element id="p2_button_a" ref="button_a">
+            <bounds x="1691" y="858" width="150" height="150" />
+        </element>
+        <element id="p2_button_b" ref="button_b">
+            <bounds x="1578" y="898" width="150" height="150" />
+        </element>
+    </group>
+    
+	<view name="GadgetsYOKO">
+		<element id="background_yoko" ref="background_yoko">
+			<bounds x="0" y="0" width="1920" height="1080" />
+		</element>
+        
+		<element id="game_logo" ref="game_logo">
+			<bounds x="0" y="0" width="555" height="255" />
+		</element>
+
+        <group ref="rank_panel">
+            <bounds x="1401" y="11" width="510" height="118" />
+        </group>
+
+        <group ref="zan_panel">
+            <bounds x="1430" y="140" width="454" height="121" />
+        </group>
+
+        <group ref="boss_hp_panel">
+            <bounds x="1428" y="586" width="456" height="118" />
+        </group>
+
+        <group ref="boss_time_panel">
+            <bounds x="1428" y="709" width="457" height="118" />
+        </group>
+
+        <group ref="next_drop_panel">
+            <bounds x="1429" y="275" width="477" height="184" />
+        </group>
+
+        <group ref="next_medal_panel">
+            <bounds x="1428" y="458" width="381" height="117" />
+        </group>
+
+        <group ref="option_drops_panel">
+            <bounds x="1688" y="866" width="197" height="171" />
+        </group>
+
+        <group ref="powerup_drops_panel">
+            <bounds x="1424" y="870" width="219" height="167" />
+        </group>
+
+        <group ref="profile_panel">
+            <bounds x="19" y="560" width="531" height="290" />
+        </group>
+
+        <group ref="p1_input_panel">
+            <bounds x="20" y="830" width="456" height="247" />
+        </group>
+
+        <group ref="p2_input_panel">
+            <bounds x="20" y="300" width="456" height="247" />
+        </group>
+		
+        <!-- Remove this from code, to ensure the layout is loaded properly -->
+		<element id="warning" ref="warning">
+			<bounds x="1500" y="900" width="400" height="30" />
+            <color red="1" green="0" blue="0" alpha="1" />
+		</element>
+		
+        <!-- The game itself -->
+		<screen index="0">
+			<bounds x="555" y="0" width="810" height="1080" />
+		</screen>
+	</view>	
+    
+	<view name="GadgetsTATE">
+		
+        <!-- Remove this from code, to ensure the layout is loaded properly -->
+		<element id="warning" ref="warning">
+			<bounds x="1500" y="400" height="400" width="30" />
+            <color red="1" green="0" blue="0" alpha="1" />
+            <orientation rotate="90" />
+		</element>
+        
+		<element id="background_yoko" ref="background_tate">
+			<bounds x="0" y="0" height="1080" width="1920" />
+            <orientation rotate="90" />
+		</element>
+		
+        <!-- The game itself -->
+		<screen index="0">
+			<bounds x="240" y="0" height="1080" width="1440" />
+            <orientation rotate="90" />
+		</screen>
+
+        <group ref="rank_panel">
+            <bounds x="1820" y="11" height="340" width="78" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="zan_panel">
+            <bounds x="1700" y="11" height="302" width="80" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="boss_hp_panel">
+            <bounds x="20" y="386" height="304" width="78" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="boss_time_panel">
+            <bounds x="120" y="386" height="304" width="78" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="next_drop_panel">
+            <bounds x="1690" y="358" height="318" width="122" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="next_medal_panel">
+            <bounds x="1810" y="750" height="254" width="78" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="option_drops_panel">
+            <bounds x="1690" y="700" height="130" width="114" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="powerup_drops_panel">
+            <bounds x="1690" y="900" height="146" width="110" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="profile_panel">
+            <bounds x="1788" y="500" height="236" width="129" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="p1_input_panel">
+            <bounds x="20" y="40" height="304" width="164" />
+            <orientation rotate="90" />
+        </group>
+
+        <group ref="p2_input_panel">
+            <bounds x="20" y="750" height="304" width="164" />
+            <orientation rotate="90" />
+        </group>
+	</view>	
+    
+	<view name="GadgetsYokoFlipped">
+        
+		<element id="background_yoko" ref="background_yoko">
+			<bounds x="0" y="0" width="1920" height="1080" />
+            <orientation flipx="yes" />
+		</element>
+        
+		<element id="game_logo" ref="game_logo">
+			<bounds x="1365" y="0" width="555" height="255" />
+		</element>
+
+        <group ref="rank_panel">
+            <bounds x="36" y="11" width="510" height="118" />
+        </group>
+
+        <group ref="zan_panel">
+            <bounds x="65" y="140" width="454" height="121" />
+        </group>
+
+        <group ref="boss_hp_panel">
+            <bounds x="63" y="586" width="456" height="118" />
+        </group>
+
+        <group ref="boss_time_panel">
+            <bounds x="63" y="709" width="457" height="118" />
+        </group>
+
+        <group ref="next_drop_panel">
+            <bounds x="64" y="275" width="477" height="184" />
+        </group>
+
+        <group ref="next_medal_panel">
+            <bounds x="63" y="458" width="381" height="117" />
+        </group>
+
+        <group ref="option_drops_panel">
+            <bounds x="323" y="866" width="197" height="171" />
+        </group>
+
+        <group ref="powerup_drops_panel">
+            <bounds x="59" y="870" width="219" height="167" />
+        </group>
+
+        <group ref="profile_panel">
+            <bounds x="1384" y="560" width="531" height="290" />
+        </group>
+
+        <group ref="p2_input_panel">
+            <bounds x="1385" y="300" width="456" height="247" />
+        </group>
+
+        <group ref="p1_input_panel">
+            <bounds x="1385" y="830" width="456" height="247" />
+        </group>
+        
+        <!-- Remove this from code, to ensure the layout is loaded properly -->
+		<element id="warning" ref="warning">
+			<bounds x="1500" y="900" width="400" height="30" />
+            <color red="1" green="0" blue="0" alpha="1" />
+		</element>
+        
+        <!-- The game itself -->
+		<screen index="0">
+			<bounds x="555" y="0" width="810" height="1080" />
+		</screen>
+	</view>	
+    <script><![CDATA[
+
+local P1_SCORE_ADDR = 0xc510d50;
+local P1_ADDR = 0xc49c5dc;
+local P2_ADDR = 0xc49c894;
+local RANK_ADDR = 0xc453ab0;
+local ZAN_ADDR = 0xc4a3ab6;
+local ZAN_SUB_ADDR = 0xc3ae102;
+local DROP_ADDR = 0xc4240a4;
+local PICKUPS_ADDR = 0xc21ccbc;
+local SHOT_DROP_ADDR = 0xC5C16F8;
+local OPTION_DROP_ADDR = 0xC5C16F9;
+local RANK_PERCENT = true;
+local MEDAL_ADDR = 0xC5C0162;
+local INPUT_DISAPPEAR_TIMEOUT = 600;
+local ENEMIES_ADDR = 0xc416968;
+local ENEMIES_COUNT = 256;
+local ENEMY_SIZE = 204;
+    
+local BOSSES = {
+    [61] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 1 "mshipa"
+    [57] = {[1] = {4,160,{[1] = 3600, [3] = 5400}} },  -- boss 1 "b_bossa"
+    [64] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 2.1 "mshipd"
+    [69] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 2.2 "bmx_b"
+    [44] = {[0] = {4,160,{[1] = 7200, [3] = 10800}} },  -- boss 2 "b_bossf"
+    [63] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 3 "mshipc"
+    [39] = {[0] = {4,160,{[1] = 3600, [3] = 7200, [5] = 10800}},  -- boss 3 "b_bossd"
+            ['hp_overrides'] = {[3] = 8} },  -- in the second phase, pick HP from part 8 (arms)
+    [62] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 4.1 "mshipb"
+    [37] = {[0] = {4,160,{[1] = 7200}} },  -- midboss 4.2 "snakel"
+    [42] = {[0] = {4,160,{[1] = 5400, [3] = 7200}} },  -- boss 4 "b_bosse"
+    [65] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 5 "mshipe"
+    [84] = {[0] = {2,88,{[1] = 8100, [3] = 7200}} },  -- boss 5 "b_bossb"
+    [41] = {[1] = {4,160,{[1] = 3600}} },  -- midboss 6.1 "mbx_a"
+    [72] = {[0] = {4,160,{[1] = 7200}} },  -- midboss 6.2 "lb_fire"
+    [66] = {[0] = {4,160,{[1] = 10800}} },  -- midboss 6.3 "mshipf"
+    [2]  = {[0] = {4,160,{[1] = 3600, [3] = 7200, [5] = 10800}},  -- boss 6 "bossc"
+            ['hp_overrides'] = {[1] = 1} },  -- in the first phase, pick HP from part 1 (circle)
+    [67] = {[0] = {4,160,{[1] = 10800}} },  -- midboss 7 "mshipg"
+    [36] = {[0] = {4,160,{[1] = 7200, [3] = 10800}},
+            [1] = {4,160,{[1] = 7200, [3] = 10800}},
+            [2] = {4,160,{[1] = 7200, [3] = 10800}},
+            [4] = {4,160,{[1] = 10800, [3] = 3600}} },  -- boss 7 "b_bossg"
+}
+
+local get_digits = function (v)
+    local result = {};
+    local minus = v < 0;
+    if minus then
+        v = -v;
+    end
+    local i = 0;
+    local r = v % 1;
+    v = v - r;
+    while v > 0 do
+        r = v % 10;
+        result[i] = r;
+        i = i + 1;
+        v = (v - r) / 10;
+    end
+    return result;
+end
+
+local slope = function(t)
+    return (t <= 0) and 0 or (
+        (t >= 1) and 1 or (t)
+    )
+end
+
+local fetch_repeatables = function(view, fmt, start)
+    local l = {};
+    local i = start;
+    while 1 do
+        l[i] = view.items[string.format(fmt, i)];
+        if not l[i] then
+            break;
+        end;
+        i = i + 1;
+        end
+    return l;
+end
+
+file:set_resolve_tags_callback(function()
+    local p = machine.devices[':maincpu'].spaces['program'];
+    local in1 = file.device:ioport(":PORT_D");
+    local in2 = file.device:ioport(":PORT_L");
+    
+    local p1_input_timeout = 0;
+    local p2_input_timeout = 0;
+    local p1_last_input = 0xff;
+    local p2_last_input = 0xff;
+    local p1_score = 0;
+
+    local zan = 0;
+    local rank = 0;
+    local next_drop = -1;
+    local next_medal = 0;
+    local active_counter = 0;
+    local dropped_shots = 0;
+    local dropped_options = 0;
+    local count = 0;
+    
+    local p1_ship = -1;
+    local p2_ship = -1;
+    local p1_status = 0;
+    local p2_status = 0;
+    
+    local boss_timer = 0;
+    local boss_phase = 0;
+    local boss_hp = 0;
+    local render_count = 0;
+    local boss_part_hp_override = false;
+
+    local in1_val = 0;
+    local in2_val = 0;
+    
+    local fetch_values = function()
+        in1_val = in1:read();
+        in2_val = in2:read();
+    
+        next_medal = p:read_u8(MEDAL_ADDR);
+        rank = p:read_u32(RANK_ADDR);
+        zan = p:read_u16(ZAN_ADDR) - p:read_u16(ZAN_SUB_ADDR);
+        next_drop = p:read_u8(DROP_ADDR);
+        dropped_shots = p:read_u8(SHOT_DROP_ADDR);
+        dropped_options = p:read_u8(OPTION_DROP_ADDR);
+        p1_ship = p:read_u32(P1_ADDR + 8);
+        p2_ship = p:read_u32(P2_ADDR + 8);
+        p1_status = p:read_u32(P1_ADDR);
+        p2_status = p:read_u32(P2_ADDR);
+        p1_score = p:read_u32(P1_SCORE_ADDR);
+        
+        boss_timer = -1;
+        boss_hp = -1;
+        boss_phase = -1;
+        for enemy_idx=0,ENEMIES_COUNT-1 do
+            local enemy_ptr = ENEMIES_ADDR + (enemy_idx * ENEMY_SIZE);
+            local enemy_status = p:read_u32(enemy_ptr);
+            local enemy_hitpoints = p:read_u16(enemy_ptr + 68);
+            if enemy_status & 0x80000000 ~= 0 and enemy_status & 0x4000 == 0 and enemy_hitpoints > 0 then
+                local enemy_type = p:read_u32(enemy_ptr + 4);
+                if BOSSES[enemy_type] then
+                    local enemy_part_id = p:read_u32(enemy_ptr + 8);
+                    if BOSSES[enemy_type]['hp_overrides'] and enemy_part_id == boss_part_hp_override then
+                        boss_hp = enemy_hitpoints;
+                    elseif BOSSES[enemy_type][enemy_part_id] then
+                        boss_hp = enemy_hitpoints;
+                    end
+                    if BOSSES[enemy_type][enemy_part_id] then
+                        local boss_spec = BOSSES[enemy_type][enemy_part_id];
+                        local TIMER_READERS = { [1] = p.read_u8, [2] = p.read_u16, [4] = p.read_u32 };
+                        local timer_reader = TIMER_READERS[boss_spec[1]];
+                        local timer_off = boss_spec[2];
+                        local enemy_timer = timer_reader(p, enemy_ptr + timer_off);
+                        local enemy_phase = p:read_u8(enemy_ptr + 184);
+                        local phase_duration = boss_spec[3][enemy_phase];
+                        if phase_duration then
+                            boss_timer = phase_duration - enemy_timer;
+                            boss_timer = boss_timer > 0 and boss_timer or 0;
+                        else
+                            boss_timer = enemy_timer;
+                        end
+                        boss_phase = enemy_phase;
+                        if BOSSES[enemy_type]['hp_overrides'] then
+                            boss_part_hp_override = BOSSES[enemy_type]['hp_overrides'][enemy_phase];
+                        end
+                    end
+                end
+            end
+        end
+        
+        if p1_last_input ~= in1_val then
+            p1_last_input = in1_val
+            p1_input_timeout = INPUT_DISAPPEAR_TIMEOUT
+        else
+            p1_input_timeout = p1_input_timeout - 1
+        end
+
+        if p2_last_input ~= in2_val then
+            p2_last_input = in2_val
+            p2_input_timeout = INPUT_DISAPPEAR_TIMEOUT
+        else
+            p2_input_timeout = p2_input_timeout - 1
+        end
+    end
+    
+    local preload_view = function(view)
+
+        local background_yoko = view.items["background_yoko"];
+        local rank_bar = view.items["rank_bar"];
+        local zan_digit_sign = view.items["zan_digit_sign"];
+        local zan_digits = fetch_repeatables(view, "zan_digit_%d", 0);
+        local rank_digits = fetch_repeatables(view, "rank_digit_%d", 0);
+        local hp_digits = fetch_repeatables(view, "hp_digit_%d", 0);
+        local timer_digits = fetch_repeatables(view, "timer_digit_%d", 0);
+        local phase_digit = view.items["phase_digit"];
+        local player_portrait_1 = view.items["player_portrait_1"];
+        local player_portrait_2 = view.items["player_portrait_2"];
+        local player_name_1 = view.items["player_name_1"];
+        local player_name_2 = view.items["player_name_2"];
+        local player_variant_1 = view.items["player_variant_1"];
+        local player_variant_2 = view.items["player_variant_2"];
+        local drop_viewers = fetch_repeatables(view, "drop_viewer_%d", 0);
+        local medal_display = view.items["medal_display"];
+        local p1_stick = view.items["p1_stick"];
+        local p1_button_a = view.items["p1_button_a"];
+        local p1_button_b = view.items["p1_button_b"];
+        local p2_stick = view.items["p2_stick"];
+        local p2_button_a = view.items["p2_button_a"];
+        local p2_button_b = view.items["p2_button_b"];
+        local powerup_drops_digit = view.items["powerup_drops_digit"];
+        local option_drops_digit = view.items["option_drops_digit"];
+        local p1_score_digits = fetch_repeatables(view, "p1_score_digit_%d", 0);
+        
+        local RANK_BAR_BOUNDS = rank_bar.bounds;
+        local SCREENW = view.bounds.width;
+        local SCREENH = view.bounds.height;
+        local DW = powerup_drops_digit.bounds.width;
+        local DH = powerup_drops_digit.bounds.height;
+        local POWERUP_DROPS_DIGIT_POS_X = (powerup_drops_digit.bounds.x0 + powerup_drops_digit.bounds.x1 + DW) / 2;
+        local POWERUP_DROPS_DIGIT_POS_Y = (powerup_drops_digit.bounds.y0 + powerup_drops_digit.bounds.y1 + DH) / 2;
+        local OPTION_DROPS_DIGIT_POS_X = (option_drops_digit.bounds.x0 + option_drops_digit.bounds.x1 + DW) / 2;
+        local OPTION_DROPS_DIGIT_POS_Y = (option_drops_digit.bounds.y0 + option_drops_digit.bounds.y1 + DH) / 2;
+    
+        view:set_prepare_items_callback(function()
+            fetch_values();
+            local digits = {};
+
+            if RANK_PERCENT then
+                -- Show rank in percent
+                local v = ((1-rank/0x1000000) * 1000000);
+                digits = get_digits(v);
+                rank_digits[5]:set_state(digits[0]);
+                rank_digits[4]:set_state(digits[1]);
+                rank_digits[3]:set_state(digits[2]);
+                rank_digits[2]:set_state(digits[3]);
+                rank_digits[1]:set_state(digits[4]);
+                rank_digits[0]:set_state(digits[5]);
+            else
+                -- Show rank in hex
+                rank_digits[5]:set_state(rank >>  0 & 15);
+                rank_digits[4]:set_state(rank >>  4 & 15);
+                rank_digits[3]:set_state(rank >>  8 & 15);
+                rank_digits[2]:set_state(rank >> 12 & 15);
+                rank_digits[1]:set_state(rank >> 16 & 15);
+                rank_digits[0]:set_state(rank >> 20 & 15);
+            end
+            
+            local v = zan;
+            if zan < 0 then
+                v = -zan;
+                zan_digit_sign:set_state(255);
+            else
+                zan_digit_sign:set_state(254);
+            end
+            digits = get_digits(v);
+            zan_digits[3]:set_state(digits[0]);
+            zan_digits[2]:set_state(digits[1]);
+            zan_digits[1]:set_state(digits[2]);
+            zan_digits[0]:set_state(digits[3]);
+            
+            if boss_hp > 0 then
+                digits = get_digits(boss_hp);
+                hp_digits[3]:set_state(digits[0]);
+                hp_digits[2]:set_state(digits[1]);
+                hp_digits[1]:set_state(digits[2]);
+                hp_digits[0]:set_state(digits[3]);
+                
+                digits = get_digits(boss_timer / 60);
+                phase_digit:set_state(boss_phase);
+                timer_digits[2]:set_state(digits[0]);
+                timer_digits[1]:set_state(digits[1]);
+                timer_digits[0]:set_state(digits[2]);
+            else
+                hp_digits[3]:set_state(255);
+                hp_digits[2]:set_state(255);
+                hp_digits[1]:set_state(255);
+                hp_digits[0]:set_state(255);
+                phase_digit:set_state(255);
+                timer_digits[2]:set_state(255);
+                timer_digits[1]:set_state(255);
+                timer_digits[0]:set_state(255);
+            end
+            
+            digits = get_digits(p1_score);
+            for i=0,#p1_score_digits do
+                local x = digits[i] and digits[i] or 254;
+                p1_score_digits[#p1_score_digits-i]:set_state(x);
+            end
+            
+            player_portrait_1:set_state((p1_status >> 31) == 0 and 100 or ((p1_ship >> 2) & 3));
+            player_portrait_2:set_state((p2_status >> 31) == 0 and 100 or ((p2_ship >> 2) & 3));
+            player_name_1:set_state((p1_status >> 31) == 0 and 100 or ((p1_ship >> 2) & 3));
+            player_name_2:set_state((p2_status >> 31) == 0 and 100 or ((p2_ship >> 2) & 3));
+            player_variant_1:set_state((p1_status >> 31) == 0 and 100 or ((p1_ship & 3) + 10));
+            player_variant_2:set_state((p2_status >> 31) == 0 and 100 or ((p2_ship & 3) + 10));
+            
+            drop_viewers[0]:set_state(1 + (next_drop  ) % 8);
+            drop_viewers[1]:set_state(1 + (next_drop+1) % 8);
+            drop_viewers[2]:set_state(1 + (next_drop+2) % 8);
+            drop_viewers[3]:set_state(1 + (next_drop+3) % 8);
+            drop_viewers[4]:set_state(1 + (next_drop+4) % 8);
+            drop_viewers[5]:set_state(1 + (next_drop+5) % 8);
+
+            medal_display:set_state(next_medal);
+
+            p1_stick:set_state(~in1_val & 0xf);
+            p2_stick:set_state(~in2_val & 0xf);
+            p1_button_a:set_state((in1_val & 0x10 == 0) and 1 or 0);
+            p1_button_b:set_state((in1_val & 0x20 == 0) and 1 or 0);
+            p2_button_a:set_state((in2_val & 0x10 == 0) and 1 or 0);
+            p2_button_b:set_state((in2_val & 0x20 == 0) and 1 or 0);
+            
+            powerup_drops_digit:set_state(dropped_shots);
+            option_drops_digit:set_state(dropped_options);
+            render_count = render_count + 1;
+            
+        end);
+        
+        rank_bar:set_bounds_callback(function()
+            local v = (1-rank/0x1000000);
+            if v < 0 then v = 0; end
+            local result = emu.render_bounds();
+            if (RANK_BAR_BOUNDS.width > RANK_BAR_BOUNDS.height) then
+                result:set_wh(RANK_BAR_BOUNDS.x0, RANK_BAR_BOUNDS.y0, RANK_BAR_BOUNDS.width * v, RANK_BAR_BOUNDS.height);
+            else
+                result:set_wh(RANK_BAR_BOUNDS.x0, RANK_BAR_BOUNDS.y0, RANK_BAR_BOUNDS.width, RANK_BAR_BOUNDS.height * v);
+            end
+            return result;
+        end)
+
+        local p1_input_color_callback = function()
+            return emu.render_color(slope(p1_input_timeout / 60), 1, 1, 1)
+        end
+        local p2_input_color_callback = function()
+            return emu.render_color(slope(p2_input_timeout / 60), 1, 1, 1)
+        end
+        p1_stick:set_color_callback(p1_input_color_callback)
+        p1_button_a:set_color_callback(p1_input_color_callback)
+        p1_button_b:set_color_callback(p1_input_color_callback)
+        p2_stick:set_color_callback(p2_input_color_callback)
+        p2_button_a:set_color_callback(p2_input_color_callback)
+        p2_button_b:set_color_callback(p2_input_color_callback)
+            
+        powerup_drops_digit:set_color_callback(function()
+            if (dropped_shots == 4) then
+                return emu.render_color(1, 1, .5, .5);
+            else
+                return emu.render_color(1, 1, 1, 1);
+            end
+        end)
+        option_drops_digit:set_color_callback(function()
+            if (dropped_options == 4) then
+                return emu.render_color(1, 1, .5, .5);
+            else
+                return emu.render_color(1, 1, 1, 1);
+            end
+        end)
+        
+        powerup_drops_digit:set_bounds_callback(function()
+            local result = emu.render_bounds();
+            local d = 1;
+            if (dropped_shots == 4) then
+                d = ((render_count % 30) - 15) / 15;
+                d = d * d + 1;
+            end
+            result:set_wh(POWERUP_DROPS_DIGIT_POS_X - DW * d, POWERUP_DROPS_DIGIT_POS_Y - DH * d, DW * (2*d-1), DH * (2*d-1));
+            return result;
+        end)
+
+        option_drops_digit:set_bounds_callback(function()
+            local result = emu.render_bounds();
+            local d = 1;
+            if (dropped_options == 4) then
+                d = ((render_count % 30) - 15) / 15;
+                d = d * d + 1;
+            end
+            result:set_wh(OPTION_DROPS_DIGIT_POS_X - DW * d, OPTION_DROPS_DIGIT_POS_Y - DH * d, DW * (2*d-1), DH * (2*d-1));
+            return result;
+        end)
+
+        background_yoko:set_state(0);
+        view.items["warning"]:set_state(0);
+    end
+    
+    file.views["GadgetsYOKO"]:set_preload_callback(function()
+        preload_view(file.views["GadgetsYOKO"])
+    end);
+    file.views["GadgetsYokoFlipped"]:set_preload_callback(function()
+        preload_view(file.views["GadgetsYokoFlipped"])
+    end);
+    file.views["GadgetsTATE"]:set_preload_callback(function()
+        preload_view(file.views["GadgetsTATE"])
+    end);
+end)
+    ]]></script>
+</mamelayout>
