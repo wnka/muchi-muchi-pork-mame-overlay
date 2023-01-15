@@ -41,6 +41,10 @@
 		<image state="0"  file="button_b.png" />
 		<image state="1"  file="button_b_pressed.png" />
 	</element>
+	<element name="button_c">
+		<image state="0"  file="button_b.png" />
+		<image state="1"  file="button_b_pressed.png" />
+	</element>
 	<element name="player_portrait">
 		<image state="0"  file="meidi.png" />
 		<image state="1"  file="kasumi.png" />
@@ -300,10 +304,13 @@
             <bounds x="20" y="800" width="247" height="247" />
         </element>
         <element id="p1_button_a" ref="button_a">
-            <bounds x="326" y="858" width="150" height="150" />
+            <bounds x="213" y="898" width="150" height="150" />
         </element>
         <element id="p1_button_b" ref="button_b">
-            <bounds x="213" y="898" width="150" height="150" />
+            <bounds x="326" y="858" width="150" height="150" />
+        </element>
+        <element id="p1_button_c" ref="button_c">
+            <bounds x="449" y="858" width="150" height="150" />
         </element>
     </group>
     
@@ -733,6 +740,7 @@ file:set_resolve_tags_callback(function()
         local p1_stick = view.items["p1_stick"];
         local p1_button_a = view.items["p1_button_a"];
         local p1_button_b = view.items["p1_button_b"];
+        local p1_button_c = view.items["p1_button_c"];
         local p2_stick = view.items["p2_stick"];
         local p2_button_a = view.items["p2_button_a"];
         local p2_button_b = view.items["p2_button_b"];
@@ -836,6 +844,7 @@ file:set_resolve_tags_callback(function()
             p2_stick:set_state(~in2_val & 0xf);
             p1_button_a:set_state((in1_val & 0x10 == 0) and 1 or 0);
             p1_button_b:set_state((in1_val & 0x20 == 0) and 1 or 0);
+            p1_button_c:set_state((in1_val & 0x40 == 0) and 1 or 0);
             p2_button_a:set_state((in2_val & 0x10 == 0) and 1 or 0);
             p2_button_b:set_state((in2_val & 0x20 == 0) and 1 or 0);
             
@@ -866,6 +875,7 @@ file:set_resolve_tags_callback(function()
         p1_stick:set_color_callback(p1_input_color_callback)
         p1_button_a:set_color_callback(p1_input_color_callback)
         p1_button_b:set_color_callback(p1_input_color_callback)
+        p1_button_c:set_color_callback(p1_input_color_callback)
         p2_stick:set_color_callback(p2_input_color_callback)
         p2_button_a:set_color_callback(p2_input_color_callback)
         p2_button_b:set_color_callback(p2_input_color_callback)
