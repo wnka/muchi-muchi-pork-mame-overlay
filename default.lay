@@ -551,7 +551,8 @@ local INPUT_DISAPPEAR_TIMEOUT = 600;
 local ENEMIES_ADDR = 0xc416968;
 local ENEMIES_COUNT = 256;
 local ENEMY_SIZE = 204;
-    
+local LOWEST_RANK_VAL = 0xE7FFF0;
+
 local BOSSES = {
     [61] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 1 "mshipa"
     [57] = {[1] = {4,160,{[1] = 3600, [3] = 5400}} },  -- boss 1 "b_bossa"
@@ -764,7 +765,7 @@ file:set_resolve_tags_callback(function()
 
             if RANK_PERCENT then
                 -- Show rank in percent
-                local v = ((1-rank/0x1000000) * 1000000);
+                local v = ((1-(rank-LOWEST_RANK_VAL)/0x1000000) * 1000000);
                 digits = get_digits(v);
                 rank_digits[5]:set_state(digits[0]);
                 rank_digits[4]:set_state(digits[1]);
@@ -855,7 +856,7 @@ file:set_resolve_tags_callback(function()
         end);
         
         rank_bar:set_bounds_callback(function()
-            local v = (1-rank/0x1000000);
+            local v = ((LOWEST_RANK_VAL-rank)/0x1000000);
             if v < 0 then v = 0; end
             local result = emu.render_bounds();
             if (RANK_BAR_BOUNDS.width > RANK_BAR_BOUNDS.height) then
