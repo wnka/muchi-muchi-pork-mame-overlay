@@ -57,17 +57,6 @@
 		<image state="2"  file="shasta_name.png" />
 		<image state="3"  file="lace_name.png" />
 	</element>
-	<element name="drop_viewer">
-		<image state="1" file="drop_bullet.png" />
-		<image state="2" file="drop_rose.png" />
-		<image state="3" file="drop_double.png" />
-		<image state="4" file="drop_rose.png" />
-		<image state="5" file="drop_triple.png" />
-		<image state="6" file="drop_rose.png" />
-		<image state="7" file="drop_option.png" />
-		<image state="8" file="drop_rose.png" />
-		<image state="9" file="drop_bullet.png" />
-	</element>
 	<element name="medal_display">
 		<image state="0"  file="medal_100.png" />
 		<image state="1"  file="medal_200.png" />
@@ -101,12 +90,6 @@
 	<element name="profile_gadget">
 		<image state="0" file="profile.png" />
 	</element>
-	<element name="powerup_drops_gadget">
-		<image state="0" file="powerup_drops.png" />
-	</element>
-	<element name="option_drops_gadget">
-		<image state="0" file="option_drops.png" />
-	</element>
 	<element name="rank_bar_gadget">
 		<image state="0" file="rank_bar.png" />
 	</element>
@@ -115,9 +98,6 @@
 	</element>
 	<element name="next_medal_gadget">
 		<image state="0" file="next_medal.png" />
-	</element>
-	<element name="next_drop_gadget">
-		<image state="0" file="next_drop.png" />
 	</element>
 	<element name="zan_counter_gadget">
 		<image state="0" file="zan_counter.png" />
@@ -218,54 +198,12 @@
 		</element>
     </group>
     
-    <group name="next_drop_panel">
-		<element id="next_drop_gadget" ref="next_drop_gadget">
-			<bounds x="1429" y="275" width="477" height="184" />
-		</element>
-		<element id="drop_viewer_0" ref="drop_viewer">
-			<bounds x="1514" y="364" width="50" height="50" />
-		</element>
-		<element id="drop_viewer_1" ref="drop_viewer">
-			<bounds x="1574" y="364" width="50" height="50" />
-		</element>
-		<element id="drop_viewer_2" ref="drop_viewer">
-			<bounds x="1634" y="364" width="50" height="50" />
-		</element>
-		<element id="drop_viewer_3" ref="drop_viewer">
-			<bounds x="1694" y="364" width="50" height="50" />
-		</element>
-		<element id="drop_viewer_4" ref="drop_viewer">
-			<bounds x="1754" y="364" width="50" height="50" />
-		</element>
-		<element id="drop_viewer_5" ref="drop_viewer">
-			<bounds x="1814" y="364" width="50" height="50" />
-		</element>
-    </group>
-    
     <group name="next_medal_panel">
 		<element id="next_medal_gadget" ref="next_medal_gadget">
 			<bounds x="1428" y="458" width="381" height="117" />
 		</element>
 		<element id="medal_display" ref="medal_display">
 			<bounds x="1703" y="475" width="80" height="80" />
-		</element>
-    </group>
-    
-    <group name="option_drops_panel">
-		<element id="option_drops_gadget" ref="option_drops_gadget">
-			<bounds x="1688" y="866" width="197" height="171" />
-		</element>
-		<element id="option_drops_digit" ref="digit">
-			<bounds x="1775" y="932" width="58" height="87" />
-		</element>
-    </group>
-    
-    <group name="powerup_drops_panel">
-		<element id="powerup_drops_gadget" ref="powerup_drops_gadget">
-			<bounds x="1424" y="870" width="219" height="167" />
-		</element>
-		<element id="powerup_drops_digit" ref="digit">
-			<bounds x="1503" y="932" width="58" height="87" />
 		</element>
     </group>
     
@@ -352,20 +290,8 @@
             <bounds x="1428" y="709" width="457" height="118" />
         </group>
 
-        <group ref="next_drop_panel">
-            <bounds x="1429" y="275" width="477" height="184" />
-        </group>
-
         <group ref="next_medal_panel">
             <bounds x="1428" y="458" width="381" height="117" />
-        </group>
-
-        <group ref="option_drops_panel">
-            <bounds x="1688" y="866" width="197" height="171" />
-        </group>
-
-        <group ref="powerup_drops_panel">
-            <bounds x="1424" y="870" width="219" height="167" />
         </group>
 
         <group ref="profile_panel">
@@ -432,23 +358,8 @@
             <orientation rotate="90" />
         </group>
 
-        <group ref="next_drop_panel">
-            <bounds x="1690" y="358" height="318" width="122" />
-            <orientation rotate="90" />
-        </group>
-
         <group ref="next_medal_panel">
             <bounds x="1810" y="750" height="254" width="78" />
-            <orientation rotate="90" />
-        </group>
-
-        <group ref="option_drops_panel">
-            <bounds x="1690" y="700" height="130" width="114" />
-            <orientation rotate="90" />
-        </group>
-
-        <group ref="powerup_drops_panel">
-            <bounds x="1690" y="900" height="146" width="110" />
             <orientation rotate="90" />
         </group>
 
@@ -495,20 +406,8 @@
             <bounds x="63" y="709" width="457" height="118" />
         </group>
 
-        <group ref="next_drop_panel">
-            <bounds x="64" y="275" width="477" height="184" />
-        </group>
-
         <group ref="next_medal_panel">
             <bounds x="63" y="458" width="381" height="117" />
-        </group>
-
-        <group ref="option_drops_panel">
-            <bounds x="323" y="866" width="197" height="171" />
-        </group>
-
-        <group ref="powerup_drops_panel">
-            <bounds x="59" y="870" width="219" height="167" />
         </group>
 
         <group ref="profile_panel">
@@ -541,10 +440,6 @@ local P1_ADDR = 0xc49c5dc;
 local P2_ADDR = 0xc49c894;
 local RANK_ADDR = 0xc4eb5f4;
 local LARD_ADDR = 0x0c510d36;
-local DROP_ADDR = 0xc4240a4;
-local PICKUPS_ADDR = 0xc21ccbc;
-local SHOT_DROP_ADDR = 0xC5C16F8;
-local OPTION_DROP_ADDR = 0xC5C16F9;
 local RANK_PERCENT = true;
 local MEDAL_ADDR = 0xC53F4A7;
 local INPUT_DISAPPEAR_TIMEOUT = 600;
@@ -629,11 +524,8 @@ file:set_resolve_tags_callback(function()
 
     local lard = 0;
     local rank = 0;
-    local next_drop = -1;
     local next_medal = 0;
     local active_counter = 0;
-    local dropped_shots = 0;
-    local dropped_options = 0;
     local count = 0;
     
     local p1_ship = -1;
@@ -657,9 +549,6 @@ file:set_resolve_tags_callback(function()
         next_medal = p:read_u8(MEDAL_ADDR);
         rank = p:read_u32(RANK_ADDR);
         lard = p:read_u16(LARD_ADDR);
-        next_drop = p:read_u8(DROP_ADDR);
-        dropped_shots = p:read_u8(SHOT_DROP_ADDR);
-        dropped_options = p:read_u8(OPTION_DROP_ADDR);
         p1_ship = p:read_u32(P1_ADDR + 8);
         p2_ship = p:read_u32(P2_ADDR + 8);
         p1_status = p:read_u32(P1_ADDR);
@@ -737,7 +626,6 @@ file:set_resolve_tags_callback(function()
         local player_name_2 = view.items["player_name_2"];
         local player_variant_1 = view.items["player_variant_1"];
         local player_variant_2 = view.items["player_variant_2"];
-        local drop_viewers = fetch_repeatables(view, "drop_viewer_%d", 0);
         local medal_display = view.items["medal_display"];
         local p1_stick = view.items["p1_stick"];
         local p1_button_a = view.items["p1_button_a"];
@@ -746,21 +634,13 @@ file:set_resolve_tags_callback(function()
         local p2_stick = view.items["p2_stick"];
         local p2_button_a = view.items["p2_button_a"];
         local p2_button_b = view.items["p2_button_b"];
-        local powerup_drops_digit = view.items["powerup_drops_digit"];
-        local option_drops_digit = view.items["option_drops_digit"];
         local p1_score_digits = fetch_repeatables(view, "p1_score_digit_%d", 0);
         
         local RANK_BAR_BOUNDS = rank_bar.bounds;
         local LARD_BAR_BOUNDS = lard_bar.bounds;
         local SCREENW = view.bounds.width;
         local SCREENH = view.bounds.height;
-        local DW = powerup_drops_digit.bounds.width;
-        local DH = powerup_drops_digit.bounds.height;
-        local POWERUP_DROPS_DIGIT_POS_X = (powerup_drops_digit.bounds.x0 + powerup_drops_digit.bounds.x1 + DW) / 2;
-        local POWERUP_DROPS_DIGIT_POS_Y = (powerup_drops_digit.bounds.y0 + powerup_drops_digit.bounds.y1 + DH) / 2;
-        local OPTION_DROPS_DIGIT_POS_X = (option_drops_digit.bounds.x0 + option_drops_digit.bounds.x1 + DW) / 2;
-        local OPTION_DROPS_DIGIT_POS_Y = (option_drops_digit.bounds.y0 + option_drops_digit.bounds.y1 + DH) / 2;
-    
+
         view:set_prepare_items_callback(function()
             fetch_values();
             local digits = {};
@@ -827,13 +707,6 @@ file:set_resolve_tags_callback(function()
             player_variant_1:set_state((p1_status >> 31) == 0 and 100 or ((p1_ship & 3) + 10));
             player_variant_2:set_state((p2_status >> 31) == 0 and 100 or ((p2_ship & 3) + 10));
             
-            drop_viewers[0]:set_state(1 + (next_drop  ) % 8);
-            drop_viewers[1]:set_state(1 + (next_drop+1) % 8);
-            drop_viewers[2]:set_state(1 + (next_drop+2) % 8);
-            drop_viewers[3]:set_state(1 + (next_drop+3) % 8);
-            drop_viewers[4]:set_state(1 + (next_drop+4) % 8);
-            drop_viewers[5]:set_state(1 + (next_drop+5) % 8);
-
             medal_display:set_state(next_medal);
 
             p1_stick:set_state(~in1_val & 0xf);
@@ -844,8 +717,6 @@ file:set_resolve_tags_callback(function()
             p2_button_a:set_state((in2_val & 0x10 == 0) and 1 or 0);
             p2_button_b:set_state((in2_val & 0x20 == 0) and 1 or 0);
             
-            powerup_drops_digit:set_state(dropped_shots);
-            option_drops_digit:set_state(dropped_options);
             render_count = render_count + 1;
             
         end);
@@ -888,43 +759,6 @@ file:set_resolve_tags_callback(function()
         p2_button_a:set_color_callback(p2_input_color_callback)
         p2_button_b:set_color_callback(p2_input_color_callback)
             
-        powerup_drops_digit:set_color_callback(function()
-            if (dropped_shots == 4) then
-                return emu.render_color(1, 1, .5, .5);
-            else
-                return emu.render_color(1, 1, 1, 1);
-            end
-        end)
-        option_drops_digit:set_color_callback(function()
-            if (dropped_options == 4) then
-                return emu.render_color(1, 1, .5, .5);
-            else
-                return emu.render_color(1, 1, 1, 1);
-            end
-        end)
-        
-        powerup_drops_digit:set_bounds_callback(function()
-            local result = emu.render_bounds();
-            local d = 1;
-            if (dropped_shots == 4) then
-                d = ((render_count % 30) - 15) / 15;
-                d = d * d + 1;
-            end
-            result:set_wh(POWERUP_DROPS_DIGIT_POS_X - DW * d, POWERUP_DROPS_DIGIT_POS_Y - DH * d, DW * (2*d-1), DH * (2*d-1));
-            return result;
-        end)
-
-        option_drops_digit:set_bounds_callback(function()
-            local result = emu.render_bounds();
-            local d = 1;
-            if (dropped_options == 4) then
-                d = ((render_count % 30) - 15) / 15;
-                d = d * d + 1;
-            end
-            result:set_wh(OPTION_DROPS_DIGIT_POS_X - DW * d, OPTION_DROPS_DIGIT_POS_Y - DH * d, DW * (2*d-1), DH * (2*d-1));
-            return result;
-        end)
-
         background_yoko:set_state(0);
         view.items["warning"]:set_state(0);
     end
