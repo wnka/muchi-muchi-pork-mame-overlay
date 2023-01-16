@@ -94,7 +94,7 @@
 		<image state="0" file="rank_bar.png" />
 	</element>
 	<element name="lard_bar_gadget">
-		<image state="0" file="rank_bar.png" />
+		<image state="0" file="lard_bar.png" />
 	</element>
 	<element name="next_medal_gadget">
 		<image state="0" file="next_medal.png" />
