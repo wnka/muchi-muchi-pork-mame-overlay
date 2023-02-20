@@ -443,35 +443,15 @@ local LARD_ADDR = 0x0c510d36;
 local RANK_PERCENT = true;
 local MEDAL_ADDR = 0xC53F4A7;
 local INPUT_DISAPPEAR_TIMEOUT = 600;
-local ENEMIES_ADDR = 0xc416968;
-local ENEMIES_COUNT = 256;
-local ENEMY_SIZE = 204;
+local ENEMIES_ADDR = 0xc4b7c9c;
+local ENEMIES_COUNT = 240; -- This is an estimate, if 256 like pinkswts I get weird entries at 244.
+local ENEMY_SIZE = 200;
 local LOWEST_RANK_VAL = 0xE7FFF0;
 
 local BOSSES = {
-    [61] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 1 "mshipa"
-    [57] = {[1] = {4,160,{[1] = 3600, [3] = 5400}} },  -- boss 1 "b_bossa"
-    [64] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 2.1 "mshipd"
-    [69] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 2.2 "bmx_b"
-    [44] = {[0] = {4,160,{[1] = 7200, [3] = 10800}} },  -- boss 2 "b_bossf"
-    [63] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 3 "mshipc"
-    [39] = {[0] = {4,160,{[1] = 3600, [3] = 7200, [5] = 10800}},  -- boss 3 "b_bossd"
-            ['hp_overrides'] = {[3] = 8} },  -- in the second phase, pick HP from part 8 (arms)
-    [62] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 4.1 "mshipb"
-    [37] = {[0] = {4,160,{[1] = 7200}} },  -- midboss 4.2 "snakel"
-    [42] = {[0] = {4,160,{[1] = 5400, [3] = 7200}} },  -- boss 4 "b_bosse"
-    [65] = {[0] = {4,160,{[1] = 3600}} },  -- midboss 5 "mshipe"
-    [84] = {[0] = {2,88,{[1] = 8100, [3] = 7200}} },  -- boss 5 "b_bossb"
-    [41] = {[1] = {4,160,{[1] = 3600}} },  -- midboss 6.1 "mbx_a"
-    [72] = {[0] = {4,160,{[1] = 7200}} },  -- midboss 6.2 "lb_fire"
-    [66] = {[0] = {4,160,{[1] = 10800}} },  -- midboss 6.3 "mshipf"
-    [2]  = {[0] = {4,160,{[1] = 3600, [3] = 7200, [5] = 10800}},  -- boss 6 "bossc"
-            ['hp_overrides'] = {[1] = 1} },  -- in the first phase, pick HP from part 1 (circle)
-    [67] = {[0] = {4,160,{[1] = 10800}} },  -- midboss 7 "mshipg"
-    [36] = {[0] = {4,160,{[1] = 7200, [3] = 10800}},
-            [1] = {4,160,{[1] = 7200, [3] = 10800}},
-            [2] = {4,160,{[1] = 7200, [3] = 10800}},
-            [4] = {4,160,{[1] = 10800, [3] = 3600}} },  -- boss 7 "b_bossg"
+    [73] = {[13] = {4,160,{[1] = 3600}} }, -- midboss 1 "mshipa"
+    [80] = {[0] = {4,160,{[1] = 3600}} },  -- boss 1 "st1boss"
+    [74] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 2
 }
 
 local get_digits = function (v)
@@ -563,9 +543,9 @@ file:set_resolve_tags_callback(function()
             local enemy_status = p:read_u32(enemy_ptr);
             local enemy_hitpoints = p:read_u16(enemy_ptr + 68);
             if enemy_status & 0x80000000 ~= 0 and enemy_status & 0x4000 == 0 and enemy_hitpoints > 0 then
-                local enemy_type = p:read_u32(enemy_ptr + 4);
+                local enemy_type = p:read_u32(enemy_ptr + 8);
                 if BOSSES[enemy_type] then
-                    local enemy_part_id = p:read_u32(enemy_ptr + 8);
+                    local enemy_part_id = p:read_u32(enemy_ptr + 12);
                     if BOSSES[enemy_type]['hp_overrides'] and enemy_part_id == boss_part_hp_override then
                         boss_hp = enemy_hitpoints;
                     elseif BOSSES[enemy_type][enemy_part_id] then
@@ -577,7 +557,7 @@ file:set_resolve_tags_callback(function()
                         local timer_reader = TIMER_READERS[boss_spec[1]];
                         local timer_off = boss_spec[2];
                         local enemy_timer = timer_reader(p, enemy_ptr + timer_off);
-                        local enemy_phase = p:read_u8(enemy_ptr + 184);
+                        local enemy_phase = p:read_u8(enemy_ptr + 180); -- this is wrong
                         local phase_duration = boss_spec[3][enemy_phase];
                         if phase_duration then
                             boss_timer = phase_duration - enemy_timer;
