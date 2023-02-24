@@ -452,6 +452,16 @@ local BOSSES = {
     [73] = {[13] = {4,160,{[1] = 3600}} }, -- midboss 1 "mshipa"
     [80] = {[0] = {4,160,{[1] = 3600}} },  -- boss 1 "st1boss"
     [74] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 2
+    [81] = {[0] = {4,160,{[1] = 3600}} }, -- boss 2 "mshipa" part 31, then 5
+    [75] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 3 "mshipa"
+    [82] = {[0] = {4,160,{[1] = 3600}} }, -- boss 3 "mshipa" part_id 0 for 1st phase, then part_id 1 for second phase. phase value stays at 1.
+    [76] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 4.1 "mshipa" part_id 45 then part_id 0
+    [77] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 4.2 "mshipa" just part_id 0
+    [83] = {[0] = {4,160,{[1] = 3600}} }, -- boss 4 62 -> 48 (phase 3 on 0, on 48 phase = 4?) -> 0 (phase = 5)
+    [79] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 5.1 seems like it's just 0
+    [78] = {[0] = {4,160,{[1] = 3600}} }, -- midboss 5.2 seems like it's just 0
+    [21] = {[3] = {4,160,{[1] = 3600}} }, -- stage 5 THE PAINTING part_id 3
+    [84] = {[0] = {4,160,{[1] = 3600}} }, -- boss 5 phase 1 = part_id 56, phase 3 part_id 26, phase 5 = part_id 0, phase 2 = part_id 42
 }
 
 local get_digits = function (v)
