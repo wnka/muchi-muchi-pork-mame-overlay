@@ -464,21 +464,21 @@ local LOWEST_RANK_VAL = 0xE7FFF0;
 -- Once "22" is destroyed we want to pull hitpoints off part_id "0".
 -- NOTE: Phases tend to be odd numbers, which is why we see "[1]", "[3]", and "[5]" in 'part_ids_for_phase'.
 local BOSSES = {
-  [73] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {13}} }, -- midboss 1
-  [80] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {22, 0}} },  -- boss 1
-  [74] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0}} }, -- midboss 2
-  [81] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {51}, [3] = {7}, [5] = {5}} }, -- boss 2
-  [75] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0}} }, -- midboss 3
+  [73] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {13}} }, -- midboss 1, timer WORK
+  [80] = {[0] = {4,152,{[1] = 10800}}, ['part_ids_for_phase'] = {[1] = {22, 0}} },  -- boss 1, timer WORK
+  [74] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0}} }, -- midboss 2, timer WORK
+  [81] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {51}, [3] = {7}, [5] = {5}} }, -- boss 2, timer NO WORK
+  [75] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0}} }, -- midboss 3, timer NO WORK
   -- BOSS 3 is a little messed up. It's all one phase, but for the first part of the phase everything is pulled off
   -- part_id 0, then the second part is part_id 1 but there isn't a part_id 0 anymore
-  [82] = {[0] = {4,160,{[1] = 3600}}, [1] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0, 1}} }, -- boss 3
-  [76] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {45, 0}} }, -- midboss 4.1
-  [77] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0}} }, -- midboss 4.2
-  [83] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {62}, [3] = {48}, [5] = {0}} }, -- boss 4
-  [79] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[0] = {0}} }, -- midboss 5.1
-  [78] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0}} }, -- midboss 5.2
-  [21] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[0] = {3}} }, -- stage 5 THE PAINTING
-  [84] = {[0] = {4,160,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {56}, [3] = {26}, [5] = {0, 42}} }, -- boss 5
+  [82] = {[0] = {4,152,{[1] = 10800}}, [1] = {4,152,{[1] = 7200}}, ['part_ids_for_phase'] = {[1] = {0, 1}} }, -- boss 3, timers WORK
+  [76] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {45, 0}} }, -- midboss 4.1, timers NO WORK
+  [77] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0}} }, -- midboss 4.2, timers NO WORK
+  [83] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {62}, [3] = {48}, [5] = {0}} }, -- boss 4, timers NO WORK
+  [79] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[0] = {0}} }, -- midboss 5.1, timers NO WORK
+  [78] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[1] = {0}} }, -- midboss 5.2, timers NO WORK
+  [21] = {[0] = {4,152,{[1] = 3600}}, ['part_ids_for_phase'] = {[0] = {3}} }, -- stage 5 THE PAINTING, timers NO WORK
+  [84] = {[0] = {4,152,{[1] = 3600, [3] = 10800, [5] = 10800}}, ['part_ids_for_phase'] = {[1] = {56}, [3] = {26}, [5] = {0, 42}} }, -- boss 5, timers work except for very last phase
 }
 
 local get_digits = function (v)
@@ -597,7 +597,7 @@ file:set_resolve_tags_callback(function()
                         local timer_reader = TIMER_READERS[boss_spec[1]];
                         local timer_off = boss_spec[2];
                         local enemy_timer = timer_reader(p, enemy_ptr + timer_off);
-                        local enemy_phase = p:read_u8(enemy_ptr + 180); -- this is wrong
+                        local enemy_phase = p:read_u8(enemy_ptr + 180);
                         local phase_duration = boss_spec[3][enemy_phase];
                         if phase_duration then
                             boss_timer = phase_duration - enemy_timer;
@@ -605,6 +605,7 @@ file:set_resolve_tags_callback(function()
                         else
                             boss_timer = enemy_timer;
                         end
+                        print("boss timer: " .. boss_timer)
                         boss_phase = enemy_phase;
                     end
                 end
