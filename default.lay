@@ -605,7 +605,6 @@ file:set_resolve_tags_callback(function()
                         else
                             boss_timer = enemy_timer;
                         end
-                        print("boss timer: " .. boss_timer)
                         boss_phase = enemy_phase;
                     end
                 end
