@@ -7,6 +7,7 @@
 # Version 0.03
 
 - Remove `print` statements accidentally left in the LUA.
+- Boss timers work for **SOME BOSSES**.
 
 # Version 0.02
 
