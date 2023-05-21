@@ -4,6 +4,10 @@
 - Design by baf
 - Huge thanks to Olifante for creating the Pink Sweets overlay. This is based on that, memory locations updated for MMP and found via the MAME debugger. 
 
+# Version 0.03
+
+- Remove `print` statements accidentally left in the LUA.
+
 # Version 0.02
 
 - Artwork is total placeholder and is just ripped off from the Pink Sweets overlay
