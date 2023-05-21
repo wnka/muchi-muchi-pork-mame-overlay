@@ -13,7 +13,8 @@ jobs:
         type: 'zip'
         filename: 'mmpork.zip'
         exclusions: '*.git*'
-    - uses: ncipollo/release-action@v1
+    - name: Upload Release
+      uses: ncipollo/release-action@v1
       with:
         artifacts: 'mmpork.zip'
         bodyFile: "README.md"
